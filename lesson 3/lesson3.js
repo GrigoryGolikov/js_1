@@ -6,6 +6,10 @@ function primeNumber(number){
     if (number <= 1) {
         return false;    
     }
+    return divNumber(number);
+}
+
+function divNumber(number){
     var i = 2;
     // проверяем остаток от деления начиная с 2 и заканчивая number - 1.
     // если остаток равен 0 , то число не простое.
