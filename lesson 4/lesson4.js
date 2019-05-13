@@ -33,22 +33,22 @@ console.log(nomberToObject(-1)); // проверка отрицательног�
 Перенести функционал подсчета корзины на объектно-ориентированную базу.*/
 
 var basket = {
-    produkts: [],
+    products: [],
     countBasketPrice: function(){
         var sum = 0;
-        for(var i = 0; i < this.produkts.length; i++){
-            sum = sum + this.produkts[i].price * this.produkts[i].count;
+        for(var i = 0; i < this.products.length; i++){
+            sum = sum + this.products[i].price * this.products[i].count;
         }
         return sum;
     }
 }
 
-var produkts = [
+var products = [
     {name: 'Куртка', price: 5000, count: 2}, 
     {name: 'Штаны', price: 3000, count: 1}, 
     {name: 'Футболка', price: 1000, count: 1}
 ];
 
-basket.produkts = produkts;
+basket.products = products;
 
 console.log("сумма корзины: " + basket.countBasketPrice());
