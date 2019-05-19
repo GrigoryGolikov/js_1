@@ -9,7 +9,7 @@ function chess(num) {
     var $table = document.createElement("table");
 
     // массив координат столбцов
-    var rows = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l","m","n","o","p"];
+    var rows = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];
 
     for (var i = 0; i <= num; i++) {
         var $tr = document.createElement("tr");
@@ -19,18 +19,15 @@ function chess(num) {
             if (i == num && j > 0) {
                 $td.classList.add("coordinates");
                 $td.textContent = rows[j - 1];
-            }
             // выводим координаты строк в первой колонке таблицы
-            else if (i != num && j == 0) {
+            } else if (i != num && j == 0) {
                 $td.classList.add("coordinates");
                 $td.textContent = num - i;
-            }
             // раскрасим ячейки основного поля.
-            else if (i != num ) {
+            } else if (i != num ) {
                 if ((i + j) % 2 == 0) {
                     $td.classList.add("white");
-                }
-                else {
+                } else {
                     $td.classList.add("black");
                 }
             }
@@ -64,8 +61,7 @@ var basket = {
     basketText: function(){
         if (this.products.length == 0){
             return "Корзина пуста";
-        } 
-        else{
+        } else{
             return "В корзине: " + this.countBasketCount() + " товаров на сумму " + this.countBasketPrice() + " рублей";    
         }
     },
@@ -94,7 +90,7 @@ function displayText($dom,text){
 var products = [
     {name: 'Куртка', price: 5000, count: 2}, 
     {name: 'Штаны', price: 3000, count: 1}, 
-    {name: 'Футболка', price: 1000, count: 1}
+    {name: 'Футболка', price: 1000, count: 1},
 ];
 basket.products = products;
 
