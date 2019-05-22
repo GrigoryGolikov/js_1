@@ -97,6 +97,8 @@ function init(){
     $modalImg = document.getElementById('modal-img');
     $modalOverlay = document.querySelector("#modal-overlay"),
 
+    window.addEventListener('keydown', handleImgChange);
+
     // кнопка закрытия модального окна
     $closeButton = document.querySelector("#close-button");
     $closeButton.addEventListener("click", handleModalClick);
@@ -108,7 +110,23 @@ function init(){
     // кнопка прокрутки картинок вправо
     $rightButton = document.querySelector("#right-button");
     $rightButton.addEventListener("click", handRightClick);
+
+
 }
+
+function handleImgChange(event) {
+    switch(event.code) {
+      case 'ArrowLeft':
+        // уменьшаем индекс картинки
+        idImg = +$modalImg.dataset.idImg -1;
+        displayProductImg($modalImg.dataset.id, idImg);
+        break;
+      case 'ArrowRight':
+        // увеличиваем индекс картинки
+        idImg = +$modalImg.dataset.idImg +1;
+        displayProductImg($modalImg.dataset.id, idImg);
+    }
+  }
 
 // функция закрывает модельное окно
 function handleModalClick(event){
